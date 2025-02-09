@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
 from scipy.sparse import csr_matrix
-train_table_raw = pd.read_table("/yahoo-20240107T063527Z-001/yahoo/ydata-ymusic-rating-study-v1_0-train.txt", sep="\t", header=None)
-test_table_raw = pd.read_table("/yahoo-20240107T063527Z-001/yahoo/ydata-ymusic-rating-study-v1_0-test.txt", sep="\t", header=None)
+train_table_raw = pd.read_table("yahoo-20240107T063527Z-001/yahoo/ydata-ymusic-rating-study-v1_0-train.txt", sep="\t", header=None)
+test_table_raw = pd.read_table("yahoo-20240107T063527Z-001/yahoo/ydata-ymusic-rating-study-v1_0-test.txt", sep="\t", header=None)
 user_feature = pd.read_table("ydata-ymusic-rating-study-v1_0-survey-answers.txt", sep="\t", header=None)
 n_users_with_feat = user_feature.shape[0]
 n_users_with_feat
