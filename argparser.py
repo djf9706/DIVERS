@@ -62,15 +62,10 @@ kuai_rand_params = {
 }
 
 simulation_params = {
-    # "train_path": dir_prefix + "/data_process/simulation/train_sr_0.1_cr_2.0_nr_10.0_tr_0.0.csv",
-    # "random_path": dir_prefix + "/data_process/simulation/random_sr_0.1_cr_2.0_nr_10.0_tr_0.0.csv",
-    # "user_feature_path": dir_prefix + "/data_process/simulation/user_feat_onehot.csv",
-    # "user_feature_label": dir_prefix + "/data_process/simulation/user_feat_label.csv",
-
-    "train_path": dir_prefix + "/data_process/simiv/train_sr_0.1_cr_2.0_nr_10.0_tr_0.0.csv",
-    "random_path": dir_prefix + "/data_process/simiv/random_sr_0.1_cr_2.0_nr_10.0_tr_0.0.csv",
-    "user_feature_path": dir_prefix + "/data_process/simiv/user_feat_onehot.csv",
-    "user_feature_label": dir_prefix + "/data_process/simiv/user_feat_label.csv",
+    "train_path": dir_prefix + "/data_process/simulation/train_sr_0.1_cr_2.0_nr_10.0_tr_0.0.csv",
+    "random_path": dir_prefix + "/data_process/simulation/random_sr_0.1_cr_2.0_nr_10.0_tr_0.0.csv",
+    "user_feature_path": dir_prefix + "/data_process/simulation/user_feat_onehot.csv",
+    "user_feature_label": dir_prefix + "/data_process/simulation/user_feat_label.csv",
     "dcf_A_hat_path": dir_prefix + "/data_process/sim_wg_Afit/",
     "ivae_path": dir_prefix + "/data_process/sim_ivae/",
     "vae_path": dir_prefix + "/data_process/sim_vae/",
@@ -110,16 +105,12 @@ def parse_args():
         data_params["random_path"] = dir_prefix + "/data_process/simiv/random{}.csv".format(args.sim_suffix)
 
 
-        # sr = args.sim_suffix.split("_")[2]
-        # tr = args.sim_suffix.split("_")[-1]
-
         sr = None
         tr = None
 
 
         data_params["ivae_path"] = dir_prefix + "/data_process/sim_ivae/sr_{}_tr_{}/".format(sr, tr)
-        # data_params["vae_path"] = dir_prefix + "/data_process/sim_vae/sr_{}_tr_{}/".format(sr, tr)
-        # data_params["dcf_A_hat_path"] = dir_prefix + "/data_process/sim_wg_Afit/sr_{}_tr_{}/".format(sr, tr)
+
     else:
         raise Exception("invalid dataset")
     setattr(args, "data_params", data_params)
