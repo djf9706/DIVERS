@@ -97,7 +97,7 @@ z_true = torch.tensor(z_true, dtype=torch.float)
 
 
 def gen_log_normal_embedding(size, embedding_dim):
-    embedding = torch.exp(torch.randn((size, embedding_dim)) * 0.5)  # 使用对数正态分布
+    embedding = torch.exp(torch.randn((size, embedding_dim)) * 0.5)  
     return embedding
 
 def gen_mixed_embeddingi(sample_size, embedding_dim, normal_ratio=0.9):
@@ -127,11 +127,11 @@ def gen_mixed_embeddingi(sample_size, embedding_dim, normal_ratio=0.9):
 def gen_mixed_embedding(sample_size, embedding_dim, normal_ratio=0.9):
 
     normal_size = int(sample_size * normal_ratio)
-    normal_embedding = torch.randn((normal_size, embedding_dim))  # 正态分布 N(0,1)
+    normal_embedding = torch.randn((normal_size, embedding_dim))  
 
 
     uniform_size = sample_size - normal_size
-    uniform_embedding = torch.rand((uniform_size, embedding_dim))  # 均匀分布 U(0,1)
+    uniform_embedding = torch.rand((uniform_size, embedding_dim))  
 
 
     embedding = torch.cat([normal_embedding, uniform_embedding], dim=0)
