@@ -18,7 +18,7 @@ def seed_everything(seed=1234):
     os.environ['PYTHONHASHSEED'] = str(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
-    torch.cuda.manual_seed(seed)  #1001为deepiv增加
+    torch.cuda.manual_seed(seed)  
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
 
@@ -123,10 +123,10 @@ def construct_vae_dataset(df_path, train_ratio, split_test=False, test_test_rati
         length = im.shape[0]
         chunk_size = length // n_users
 
-        # 计算新的数组长度，确保可以被 n_users 整除
+        
         new_length = chunk_size * n_users
 
-        # 截取长度为 new_length 的部分
+  
         im = im[:new_length].reshape(-1, chunk_size)
 
         # im = df["item_id"].to_numpy().reshape(-1, chunk_size)
