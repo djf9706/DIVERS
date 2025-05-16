@@ -29,3 +29,5 @@ Take Coat as an example
     ``
     python3 DIVERS.py --topk 5  --dataset coat --patience 20 
     ``
+
+
